@@ -17,10 +17,9 @@ def construct_relationships(objects):
             center1 = ((x1 + x2) / 2, (y1 + y2) / 2)
             center2 = ((x1_o + x2_o) / 2, (y1_o + y2_o) / 2)
 
-            dx = center1[0] - center2[0]  # Horizontal distance
-            dy = center1[1] - center2[1]  # Vertical distance
-
-            # Determine spatial relationship
+            dx = center1[0] - center2[0]  
+            dy = center1[1] - center2[1]  
+            
             relation = None
 
             if abs(dx) < 50 and abs(dy) < 50:
@@ -35,7 +34,7 @@ def construct_relationships(objects):
 
                 
                 if (obj1["label"] == obj2["label"]) and ("near" in formatted_relation or "below" in formatted_relation):
-                    continue  # Ignore "person below person", "car near car" cases
+                    continue  
 
                 if formatted_relation not in seen_relations:
                     seen_relations.add(formatted_relation)
